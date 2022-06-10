@@ -3,31 +3,49 @@ const button = document.querySelector("#btn-question");
 const question = document.querySelector(".question");
 const answer = document.querySelector(".answer");
 
-const answerList = ["Sim!", "Não!", "Talvez...", "Quem sabe?"];
+const answerList = [
+  'Certeza!',
+  'Não tenho tanta certeza.',
+  'É decididamente assim.',
+  'Não conte com isso.',
+  'Sem dúvidas!',
+  'Pergunte novamente mais tarde.',
+  'Sim, definitivamente!',
+  'Minha resposta é não.',
+  'Você pode contar com isso.',
+  'Melhor não te dizer agora.',
+  'A meu ver, sim.',
+  'Minhas fontes dizem não.',
+  'Provavelmente.',
+  'Não é possível prever agora.',
+  'Perspectiva boa.',
+  'As perspectivas não são tão boas.',
+  'Sim.',
+  'Concentre-se e pergunte novamente.',
+  'Sinais apontam que sim.'
+];
 
 function showAnswer() {  
-  let randomAnswer = answerList[Math.floor(Math.random() * answerList.length)];
+  if(input.value === '') {
+    alert("Por favor, digite uma pergunta.");
+    return;
+  }
+  button.setAttribute('disabled', true);
+
+  const randomAnswer = answerList[Math.floor(Math.random() * answerList.length)];
   
   question.innerHTML = input.value;
   question.style.opacity = "0.7";
-  question.style.transition = "all .4s";
 
   answer.innerHTML = randomAnswer;
   answer.style.opacity = "0.9";
-  answer.style.transition = "all .4s";
 
-  hideAnswer();
-}
-
-function hideAnswer() {
   setTimeout(function() {
     question.style.opacity = "0";
-    question.style.transition = "all .4s";
     question.innerHTML = "";
     answer.style.opacity = "0";
-    answer.style.transition = "all .4s";
     answer.innerHTML = "";
+
+    button.removeAttribute('disabled');
   }, 3000);
 }
-
-button.addEventListener("click", showAnswer);

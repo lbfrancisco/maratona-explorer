@@ -37,18 +37,19 @@ h1 {
 p {
   opacity: 0.7;
   font-size: 0.9rem;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 
   max-width: 99%;
 }
 
-input, button {
+input,
+button {
   width: 100%;
   height: 3.125rem;
   border-radius: 0.3125rem;
   border: none;
   padding: 1rem;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1rem;
 }
 
@@ -71,12 +72,15 @@ button:hover {
 #answer-container {
   max-width: 400px;
   word-break: break-word;
+  transition: all 0.2s;
 }
 
 .question {
   margin-top: 20px;
+  transition: all 0.2s;
 }
 
 .answer {
   margin-top: 10px;
+  transition: all 0.2s;
 }
